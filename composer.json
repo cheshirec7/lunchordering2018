@@ -19,11 +19,12 @@
     "laravel/tinker": "^1.0",
     "laravelcollective/html": "^5.6",
     "silber/bouncer": "v1.0.0-rc.1",
-    "srmklive/paypal": "~1.0",
+    "srmklive/paypal": "~1.6",
     "yajra/laravel-datatables-oracle": "~8.0"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.1",
+    "barryvdh/laravel-ide-helper": "^2.4",
     "filp/whoops": "^2.0",
     "fzaninotto/faker": "^1.4",
     "mockery/mockery": "^1.0",
@@ -37,7 +38,10 @@
     ],
     "psr-4": {
       "App\\": "app/"
-    }
+    },
+    "files": [
+      "app/helpers.php"
+    ]
   },
   "autoload-dev": {
     "psr-4": {
@@ -59,7 +63,27 @@
     ],
     "post-autoload-dump": [
       "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan ide-helper:generate",
+      "@php artisan ide-helper:meta",
       "@php artisan package:discover"
+    ],
+    "clear-all": [
+      "@php artisan clear-compiled",
+      "@php artisan cache:clear",
+      "@php artisan route:clear",
+      "@php artisan view:clear",
+      "@php artisan config:clear"
+    ],
+    "phpunit": [
+      "phpunit > output.txt -d memory_limit=2048M"
+    ],
+    "format": [
+      "./vendor/bin/php-cs-fixer fix app/  --show-progress=estimating",
+      "./vendor/bin/php-cs-fixer fix config/  --show-progress=estimating",
+      "./vendor/bin/php-cs-fixer fix database/  --show-progress=estimating",
+      "./vendor/bin/php-cs-fixer fix resources/  --show-progress=estimating",
+      "./vendor/bin/php-cs-fixer fix routes/  --show-progress=estimating",
+      "./vendor/bin/php-cs-fixer fix tests/  --show-progress=estimating"
     ]
   },
   "config": {

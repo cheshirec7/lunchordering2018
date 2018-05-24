@@ -9,11 +9,12 @@
             color: #fff;
             border: 1px solid #777;
             text-shadow: 1px 1px #222;
-            font-variant: small-caps;
+            /*font-variant: small-caps;*/
             text-align: center;
             padding: 3px 5px;
             font-size: 16px;
-            font-family: Vollkorn, serif;
+            /*font-family: Vollkorn, serif;*/
+            text-transform: uppercase;
         }
 
         .date-header {
@@ -59,7 +60,7 @@
                     {!! Form::select('provider_id', $providers, null, ['class' => 'form-control custom-select', 'id' => 'provider_id', 'required' => 'required']) !!}
                 </div>
 
-                <div id="menuitemscontainer">
+                <div id="menuitemscontainer" style="display:none;">
                     <div class="form-group">
                         {!! Form::label('menuitems', 'Lunches Available') !!}
                         <div id="scrollbox">
@@ -91,7 +92,7 @@
 @push('after-scripts')
     <script>
         $(document).ready(function () {
-            var $scrollbox = $('#scrollbox'),
+            let $scrollbox = $('#scrollbox'),
                 $menuitemscontainer = $('#menuitemscontainer'),
                 $selProvider = $('#provider_id').change(function () {
 
@@ -119,7 +120,7 @@
                     }
                 });
 
-            $selProvider.trigger('change');
+            // $selProvider.trigger('change');
         });
     </script>
 @endpush

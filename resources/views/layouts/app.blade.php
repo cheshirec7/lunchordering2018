@@ -10,11 +10,7 @@
     <meta name="author" content="Eric Totten">
     <meta name="description"
           content="Chandler Christian Academy is an independent, non-profit, non-denominational Christian preschool through eighth grade in Chandler, AZ.">
-    {{--@yield('meta')--}}
-
     <title>{!! config('app.name', 'Laravel') !!}</title>
-    {{--<script src="{!! asset('js/fa.js') !!}" defer></script>--}}
-
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -24,10 +20,9 @@
 
     @stack('before-styles')
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i|Vollkorn:600" rel="stylesheet">
-    {{--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">--}}
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-    <link href="{!! asset('css/app.css') !!}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">
+    <link href="{!! mix('css/app.css') !!}" rel="stylesheet">
     @stack('after-styles')
 
 </head>
@@ -61,7 +56,7 @@
 @include('includes.partials.footer')
 @stack('before-scripts')
 
-<script src="{!! asset('js/app.js') !!}"></script>
+<script src="{!! mix('js/app.js') !!}"></script>
 @stack('after-scripts')
 
 </body>

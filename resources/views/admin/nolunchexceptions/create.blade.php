@@ -1,8 +1,5 @@
 @extends('layouts.app')
 @section('title', 'Create Lunch Exception :: '.config('app.name'))
-@push('after-styles')
-    {!! Html::style("/css/bootstrap-datepicker3.min.css") !!}
-@endpush
 @section('content')
     <div class="col maxw-500 mx-auto mt-xl-5 mt-md-3 mt-2">
         <div class="card">
@@ -16,7 +13,7 @@
                 <div class="form-group">
                     {!! Form::label('exception_date', 'Exception Date') !!}
                     <div class="input-group">
-                        {!! Form::text('exception_date', null, ['class' => 'form-control datepicker', 'required' => 'required']) !!}
+                        {!! Form::date('exception_date', $date, ['class' => 'form-control', 'required' => 'required']) !!}
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="far fa-calendar"></i></span>
                         </div>
@@ -47,18 +44,3 @@
         </div>
     </div>
 @endsection
-@push('after-scripts')
-    {!! Html::script("/js/bootstrap-datepicker.min.js") !!}
-    <script>
-        $(document).ready(function ($) {
-            $('.datepicker').datepicker({
-                format: "mm/dd/yyyy",
-                autoclose: true,
-                daysOfWeekDisabled: "0,6",
-                orientation: "bottom left",
-                startDate: "{!! $tomorrow !!}",
-                endDate: "{!! config('app.last_day_of_school') !!}"
-            }).datepicker('update', '{!! $date !!}');
-        });
-    </script>
-@endpush

@@ -19,41 +19,5 @@ class NoLunchExceptionSeed extends Seeder
             'grade_id'          => 9,
             'exception_date'    => '2017-09-18'
         ]);
-
-        $nle = NoLunchException::create([
-            'reason'            => 'Catalina Trip',
-            'description'       => 'Lunch Provided',
-            'grade_id'          => 8,
-            'exception_date'    => '2017-09-18'
-        ]);
-
-        $nle = NoLunchException::create([
-            'reason'            => 'Catalina Trip',
-            'description'       => 'Lunch Provided',
-            'grade_id'          => 9,
-            'exception_date'    => '2017-09-19'
-        ]);
-
-        $nle = NoLunchException::create([
-            'reason'            => 'Catalina Trip',
-            'description'       => 'Lunch Provided',
-            'grade_id'          => 8,
-            'exception_date'    => '2017-09-19'
-        ]);
-
-        $nle = NoLunchException::create([
-            'reason'            => 'Catalina Trip',
-            'description'       => 'Lunch Provided',
-            'grade_id'          => 9,
-            'exception_date'    => '2017-09-20'
-        ]);
-
-        $nle = NoLunchException::create([
-            'reason'            => 'Catalina Trip',
-            'description'       => 'Lunch Provided',
-            'grade_id'          => 8,
-            'exception_date'    => '2017-09-20'
-        ]);
-
     }
 }

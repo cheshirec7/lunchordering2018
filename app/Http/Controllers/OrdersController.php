@@ -78,7 +78,6 @@ class OrdersController extends Controller
     private function buildTheWeeksUsersTable(Account $account, Collection $users, Carbon $start_date, Carbon $end_date): string
     {
         $today = Carbon::today();
-//        dd($today);
         $lunchdates = $this->lunchdates->getForOrders($start_date, $end_date);
         $nles = $this->nles->getForOrders($start_date, $end_date);
         $orders = $this->orders->getForOrders($start_date, $end_date);
@@ -285,10 +284,10 @@ class OrdersController extends Controller
             if ($forWeeks) {
                 $body .= '<div class="spacer">Lunch Provided By School</div>';
             } else {
-                $body .= '<div><img class="provider" src="/img/providers/' .
+                $body .= '<img class="provider" src="/img/providers/' .
                     $lunchdate->provider_image . '" alt="' .
-                    $lunchdate->provider_name . '" title="' . $lunchdate->provider_name . '"></div>';
-                $body .= '<div class="provided">Lunch Provided By School</div>';
+                    $lunchdate->provider_name . '" title="' . $lunchdate->provider_name . '">';
+                $body .= '<div>&nbsp;</div><div class="provided">Lunch Provided By School</div>';
             }
         }
 
@@ -369,6 +368,7 @@ class OrdersController extends Controller
      * @param Collection $users
      * @param array $accounts
      * @param string $avatar
+     * @param bool $showViewBy
      * @return \Illuminate\Http\Response
      */
     private function viewMonthSchedule(Carbon $start_date,

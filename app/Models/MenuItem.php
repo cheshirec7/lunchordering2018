@@ -45,6 +45,11 @@ class MenuItem extends Model
     {
         if ($this->numorders > 0)
             return $this->edit_button;
-        return $this->edit_button . '&nbsp;' . $this->delete_button;
+
+	    $ret = '<div class="btn-group btn-group-sm" role="group" aria-label="Menu Item Actions">';
+	    $ret .= $this->edit_button;
+	    $ret .= $this->delete_button;
+	    $ret .= '</div>';
+	    return $ret;
     }
 }

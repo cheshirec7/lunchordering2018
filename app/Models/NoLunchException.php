@@ -54,7 +54,11 @@ class NoLunchException extends Model
             if ($this->orders_placed)
                 return $this->edit_button;
 
-            return $this->edit_button . '&nbsp;' . $this->delete_button;
+	        $ret = '<div class="btn-group btn-group-sm" role="group" aria-label="No Lunch Exception Actions">';
+	        $ret .= $this->edit_button;
+	        $ret .= $this->delete_button;
+	        $ret .= '</div>';
+	        return $ret;
         }
         return '';
     }

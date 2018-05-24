@@ -20,7 +20,7 @@ class OrderRepository extends BaseRepository
     /**
      * @return mixed
      */
-    public function getForOrders(Carbon $start_date, Carbon $end_date)
+    public function getForOrders($start_date, $end_date)
     {
         return $this->query()
             ->select('id AS order_id', 'user_id', 'short_desc', 'order_date', 'total_price', 'status_code')
@@ -32,7 +32,7 @@ class OrderRepository extends BaseRepository
     /**
      * @return mixed
      */
-    public function getForReport(Carbon $date)
+    public function getForReport($date)
     {
         return $this->query()
             ->select('order_date', 'first_name', 'last_name', 'short_desc', 'status_code')
@@ -48,7 +48,7 @@ class OrderRepository extends BaseRepository
     /**
      * @return mixed
      */
-    public function getOrder($user_id, Carbon $order_date)
+    public function getOrder($user_id, $order_date)
     {
         return $this->query()
             ->where('order_date', $order_date)
@@ -100,7 +100,7 @@ class OrderRepository extends BaseRepository
     /**
      * @return mixed
      */
-    public function getOrderCountsForRange(Carbon $start_date, Carbon $end_date)
+    public function getOrderCountsForRange($start_date, $end_date)
     {
         return $this->query()
             ->select(DB::raw('COUNT(id) as order_count'), 'order_date')
@@ -112,7 +112,7 @@ class OrderRepository extends BaseRepository
     /**
      * @return integer
      */
-    public function getOrderCountForDate(Carbon $order_date)
+    public function getOrderCountForDate($order_date)
     {
         return $this->query()
             ->where('order_date', $order_date)
@@ -122,7 +122,7 @@ class OrderRepository extends BaseRepository
     /**
      * @return integer
      */
-    public function numOrdersDateGrade(Carbon $order_date, $grade_id)
+    public function numOrdersDateGrade($order_date, $grade_id)
     {
         return $this->query()
             ->join('los_users as u', 'u.id', '=', 'user_id')

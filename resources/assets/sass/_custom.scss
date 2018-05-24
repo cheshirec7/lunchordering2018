@@ -1,5 +1,9 @@
-a, a:hover, .btn.btn-light {
-  color: #9C3033;
+.btn.btn-light {
+  color: #ee1d24;
+}
+
+.btn {
+  text-transform: uppercase;
 }
 
 .form-control,
@@ -28,11 +32,20 @@ li {
   margin-bottom: 5px;
 }
 
-h1, h2, h3, h4, h5, h6, .logotext {
-  font-family: 'Vollkorn', serif;
-  color: #ed1f24;
-  font-weight: 600;
+h1, h2, h3, h4, h5, h6 {
+  //font-family: 'Vollkorn', serif;
+  color: #ee1d24;
+  font-weight: 700;
+  //font-variant: small-caps;
+  //text-transform: uppercase;
+}
+
+.logotext {
+  font-weight: 700;
   font-variant: small-caps;
+  margin: 0 0 0 20px;
+  font-size: 1.7rem;
+  color: #fff;
 }
 
 h1, .h1 {
@@ -60,16 +73,8 @@ h6, .h6 {
 }
 
 .app-header.navbar {
-  background-color: #b8171c;
-  border-bottom: 1px solid #b8171c;
-}
-
-.logotext {
-  margin: 5px 0 0 20px;
-  font-size: 1.7rem;
-  color: #fff;
-  font-variant: small-caps;
-  font-weight: 600;
+  background-color: #ee1d24;
+  border-bottom: 1px solid #ee1d24;
 }
 
 .app-header.navbar .navbar-toggler {
@@ -80,7 +85,8 @@ h6, .h6 {
 }
 
 .header-fixed .app-header {
-  box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.10), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  //box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.10), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2)
 }
 
 .app-header.navbar .navbar-brand {
@@ -160,11 +166,11 @@ label, .alert {
 
 .card-header h3 {
   font-size: 27px;
-  line-height: 21px;
+  line-height: 25px;
   margin-bottom: 0;
-  color: #ed1f24;
+  color: #ee1d24;
   font-variant: small-caps;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .card-header h3 .fa,
@@ -227,10 +233,16 @@ label, .alert {
 }
 
 .swal2-modal .swal2-title {
-  font-family: 'PT Serif', serif;
-  color: #b8171c;
+  color: #ee1d24;
   font-weight: 700;
-  font-variant: normal;
+}
+
+.swal2-popup #swal2-content {
+  padding: 20px 0;
+}
+
+.custom-control-label {
+  line-height: 24px;
 }
 
 .custom-control-label::before {
@@ -239,46 +251,6 @@ label, .alert {
 
 .custom-checkbox .custom-control-input:disabled ~ .custom-control-label::before {
   background: #c2cfd6;
-}
-
-.datepicker {
-  border-radius: 0 !important;
-}
-
-.datepicker.datepicker-dropdown {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.04);
-}
-
-.datepicker table tr th {
-  border-radius: 0 !important;
-  background-color: #286090;
-  color: #fff;
-}
-
-.datepicker .datepicker-switch:hover,
-.datepicker .next:hover,
-.datepicker .prev:hover {
-  background: #204d74 !important;
-}
-
-.datepicker table tr td, .datepicker table tr th {
-  border-radius: 0 !important;
-}
-
-.datepicker table tr td {
-  border: 1px solid #fff !important;
-}
-
-.datepicker th.prev.disabled,
-.datepicker th.next.disabled {
-  visibility: visible;
-  color: #286090;
-}
-
-.datepicker th.prev.disabled:hover,
-.datepicker th.next.disabled:hover {
-  background-color: #286090 !important;
-  cursor: auto;
 }
 
 .swal2-popup .swal2-content {

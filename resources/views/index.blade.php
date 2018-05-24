@@ -25,17 +25,17 @@
             <br/>
             <br/>
             @auth
-                <h2 style="color:green;">** You Are Logged In **</h2>
-            @else<h2>Returning Users</h2>
+                <h4 style="color:green;">** You Are Logged In **</h4>
+            @else<h4>Returning Users</h4>
             <a class="btn btn-primary" href="{!! route('login') !!}" role="button">View My Orders</a>
             <br/><br/><br/>
-            <h3>New User or Forgot Your Password?</h3>
+            <h4>New User or Forgot Your Password?</h4>
             <p>
                 <a class="btn btn-primary" href="{!! route('password.request') !!}" role="button">Reset Password</a>
             </p>
             @endauth
             <br/><br/>
-            <h2>Payments</h2>
+            <h4>Payments</h4>
             <p>
                 Payments can be made in the following ways:
             </p>
@@ -48,7 +48,7 @@
                 </li>
             </ul>
             <br/>
-            <h2>About The Lunch Ordering System</h2>
+            <h4>About The Lunch Ordering System</h4>
             <p>
                 This system works in "real-time", which means that you can add or delete lunch orders up until the time
                 orders are placed with our vendors. So for example if you place an order but then your child will end up

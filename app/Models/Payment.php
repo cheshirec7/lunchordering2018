@@ -53,8 +53,10 @@ class Payment extends Model
 
     public function getActionButtonsAttribute()
     {
-        return
-            $this->edit_button . '&nbsp;' .
-            $this->delete_button;
+	    $ret = '<div class="btn-group btn-group-sm" role="group" aria-label="Payment Actions">';
+	    $ret .= $this->edit_button;
+	    $ret .= $this->delete_button;
+	    $ret .= '</div>';
+	    return $ret;
     }
 }

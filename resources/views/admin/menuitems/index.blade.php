@@ -54,7 +54,7 @@
     {!! Html::script("https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.js") !!}
     <script>
         $(document).ready(function () {
-            var $selProvider = $("select[name='provider_id']").change(function (e) {
+            let $selProvider = $("select[name='provider_id']").change(function (e) {
                     window.location.href = window.location.origin + window.location.pathname + '?pid=' + this.value;
                 }),
                 $dataTable = $('#menuitems-table').DataTable({

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Receive New Payment :: '.config('app.name'))
 @push('after-styles')
-    {!! Html::style("/css/bootstrap-datepicker3.min.css") !!}
     <style>
         #credit_amt {
             text-align: right;
@@ -30,7 +29,7 @@
                 <div class="form-group">
                     {!! Form::label('credit_date', 'Date Received') !!}
                     <div class="input-group">
-                        {!! Form::text('credit_date', $date, ['class' => 'form-control datepicker', 'required' => 'required']) !!}
+                        {!! Form::date('credit_date', $date, ['class' => 'form-control', 'required' => 'required']) !!}
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="far fa-calendar"></i></span>
                         </div>
@@ -70,24 +69,16 @@
     </div>
 @endsection
 @push('after-scripts')
-    {!! Html::script("/js/bootstrap-datepicker.min.js") !!}
     <script>
         $(document).ready(function ($) {
 
-            var $amount = $('#credit_amt').blur(function (a) {
-                var theval = parseFloat(Math.round($amount.val() * 100) / 100).toFixed(2);
+            let $amount = $('#credit_amt').blur(function (a) {
+                let theval = parseFloat(Math.round($amount.val() * 100) / 100).toFixed(2);
 
-                if (theval > 0)
+                if (theval >= 0)
                     $amount.val(theval);
                 else
                     $amount.val('0.00');
-            });
-
-            $('.datepicker').datepicker({
-                format: "mm/dd/yyyy",
-                autoclose: true,
-                daysOfWeekDisabled: "0,6",
-                orientation: "bottom left",
             });
         });
     </script>

@@ -63,8 +63,9 @@
             color: #fff;
             border: 1px solid #777;
             text-shadow: 1px 1px #222;
-            font-variant: small-caps;
+            /*font-variant: small-caps;*/
             text-align: center;
+            text-transform: uppercase;
         }
 
         .scheduling .table td {

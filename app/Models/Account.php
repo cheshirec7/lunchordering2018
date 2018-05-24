@@ -100,9 +100,20 @@ class Account extends Authenticatable
 
     public function getActionButtonsAttribute()
     {
-        if ($this->users->count() == 0)
-            return $this->edit_button . '&nbsp;' . $this->user_button . '&nbsp;' . $this->delete_button;
+        if ($this->users->count() == 0) {
 
-        return $this->edit_button . '&nbsp;' . $this->user_button;
+	        $ret = '<div class="btn-group btn-group-sm" role="group" aria-label="Account Actions">';
+	        $ret .= $this->edit_button;
+	        $ret .= $this->user_button;
+	        $ret .= $this->delete_button;
+	        $ret .= '</div>';
+	        return $ret;
+        }
+
+	    $ret = '<div class="btn-group btn-group-sm" role="group" aria-label="Account Actions">';
+	    $ret .= $this->edit_button;
+	    $ret .= $this->user_button;
+	    $ret .= '</div>';
+	    return $ret;
     }
 }

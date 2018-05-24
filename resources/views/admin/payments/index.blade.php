@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Receive Payments :: '.config('app.name'))
 @push('after-styles')
-    {!! Html::style("/css/bootstrap-datepicker3.min.css") !!}
     <style>
         #payments-table td:nth-child(3), #payments-table td:nth-child(4) {
             /*, td:nth-child(5) {*/
@@ -73,7 +72,7 @@
                                 <div class="form-group">
                                     {!! Form::label('credit_date', 'Receive Date') !!}
                                     <div class="input-group">
-                                        {!! Form::text('credit_date', $date, ['class' => 'form-control datepicker', 'required' => 'required']) !!}
+                                        {!! Form::date('credit_date', $date, ['class' => 'form-control', 'required' => 'required']) !!}
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="far fa-calendar"></i></span>
                                         </div>
@@ -103,7 +102,6 @@
 @endsection
 @push('after-scripts')
     {!! Html::script("https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.js") !!}
-    {!! Html::script("/js/bootstrap-datepicker.min.js") !!}
     <script>
         $(document).ready(function () {
             var $selAccount = $("select[name='account_id']").change(function (e) {
@@ -148,13 +146,6 @@
                 $dataTable.ajax.url(getUrl({!! $accountid !!})).load();
                 $dataTable.settings()[0].oFeatures.bServerSide = false;
             }
-
-            $('.datepicker').datepicker({
-                format: "mm/dd/yyyy",
-                autoclose: true,
-                daysOfWeekDisabled: "0,6",
-                orientation: "bottom left",
-            });
         });
     </script>
 @endpush

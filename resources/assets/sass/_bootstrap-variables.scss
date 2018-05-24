@@ -26,7 +26,7 @@ $yellow: #ffc107 !default;
 $green: #4dbd74;
 $teal: #20c997 !default;
 $cyan: #63c2de;
-$cca-red: #ed1f24;
+$cca-red: #ee1d24;
 
 $colors: (
         blue: $blue,
@@ -119,6 +119,11 @@ $input-border-color: $gray-200;
 $input-group-addon-border-color: $gray-200;
 
 $footer-height: 30px !default;
-$font-family-sans-serif: 'PT Serif', serif;
+$font-family-sans-serif: Lato, sans-serif;
 $enable-shadows: true;
 $enable-gradients: true;
+
+$font-family-monospace: 'Roboto Mono';
+$link-color: #ee1d24;
+$link-hover-decoration: none;
+

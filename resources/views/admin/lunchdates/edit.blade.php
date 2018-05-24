@@ -9,11 +9,10 @@
             color: #fff;
             border: 1px solid #777;
             text-shadow: 1px 1px #222;
-            font-variant: small-caps;
             text-align: center;
             padding: 3px 5px;
             font-size: 16px;
-            font-family: Vollkorn, serif;
+            text-transform: uppercase;
         }
 
         .date-header {
@@ -56,7 +55,9 @@
 
                 <div class="form-group">
                     @if (count($providers) == 1)
-                        <label for="provider_id">Provider <small><i>(locked - orders have been placed)</i></small></label>
+                        <label for="provider_id">Provider
+                            <small><i>(locked - orders have been placed)</i></small>
+                        </label>
                         {!! Form::select('provider_id', $providers, $lunchdate->provider_id, ['class' => 'form-control custom-select', 'id' => 'provider_id', 'disabled'=>'disabled']) !!}
                     @else
                         {!! Form::label('provider_id', 'Provider') !!}
@@ -64,7 +65,7 @@
                     @endif
                 </div>
 
-                <div id="menuitemscontainer">
+                <div id="menuitemscontainer" style="display:none;">
                     <div class="form-group">
                         {!! Form::label('menuitems', 'Lunches Available') !!}
                         <div id="scrollbox">
@@ -94,7 +95,7 @@
 @push('after-scripts')
     <script>
         $(document).ready(function () {
-            var $scrollbox = $('#scrollbox'),
+            let $scrollbox = $('#scrollbox'),
                 $menuitemscontainer = $('#menuitemscontainer'),
                 $selProvider = $('#provider_id').change(function () {
 
